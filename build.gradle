@@ -7,10 +7,22 @@
  */
 
 // Apply the java-library plugin to add support for Java Library
+
+
+plugins {
+  id "com.bmuschko.tomcat" version "2.3"
+}
+
 apply plugin: 'java-library'
 apply plugin: 'war'
 apply plugin: 'eclipse'
 //apply plugin: "org.springframework.boot"
+apply plugin: "com.bmuschko.tomcat"
+
+
+war {
+    archiveName = 'C:/software/Jenkins/workspace/VenuTest/myweb.war'
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -36,5 +48,31 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.5.0'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.5.0'
     compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.10.RELEASE'
+    
+    implementation "com.bmuschko:gradle-tomcat-plugin:2.3"
+    
+    def tomcatVersion = '8.0.23'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
 }
+
+
+tomcat {
+    httpPort = 8888
+    //httpsPort = 8091
+    //enableSSL = true
+    contextPath = 'mywebApp'
+    
+    users {
+        user {
+            username = 'admin'
+            password = 'admin'
+            roles = ['developers', 'admin']
+        }
+
+     }
+}
+
+
 
