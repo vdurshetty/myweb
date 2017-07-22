@@ -33,6 +33,8 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context', version: '4.3.10.RELEASE'
     compile group: 'org.springframework', name: 'spring-web', version: '4.3.10.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.5.4.RELEASE'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.5.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.5.0'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.10.RELEASE'
 }
 
