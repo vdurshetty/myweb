@@ -19,9 +19,9 @@ apply plugin: 'eclipse'
 //apply plugin: "org.springframework.boot"
 
 
-war {
-    archiveName = 'myweb.war'
-}
+//war {
+//    archiveName = 'mywebApp.war'
+//}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
