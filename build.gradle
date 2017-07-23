@@ -20,7 +20,8 @@ apply plugin: 'eclipse'
 
 
 war {
-    archiveName = 'mywebApp.war'
+	destinationDir = file "C:/software/Jenkins/workspace/VenuTest/"
+    archiveName = 'myweb.war'
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -52,14 +53,13 @@ dependencies {
 }
 
     
-copy {
+/* copy {
    def srcFile = "C:/software/Jenkins/workspace/myweb/build/libs"
    def desPath = "C:/software/Jenkins/workspace/VenuTest"
    println "Copying the files from " + srcFile + " to -> " + desPath
    from new File(srcFile, "myweb.war")
    into desPath
-   dependsOn war
-}
+} */
 
 
 
