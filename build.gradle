@@ -20,7 +20,7 @@ apply plugin: 'eclipse'
 
 
 war {
-	destinationDir = file "C:/software/Jenkins/workspace/VenuTest/"
+	destinationDir = file "../workspace/VenuTest/"
     archiveName = 'myweb.war'
 }
 
